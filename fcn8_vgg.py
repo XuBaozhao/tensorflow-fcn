@@ -1,18 +1,24 @@
+# 加入绝对引用的特征,如果包下文件名和python库名重复，那么直接忽略包名，用python库名
 from __future__ import absolute_import
+# 精确除法 不加3/4=0，加上3/4=0.75
 from __future__ import division
+# 在python2中引入python3的输出
 from __future__ import print_function
 
 import os
 import logging
+# 朝正无穷大方向取整
 from math import ceil
+# system，包含了与Python解释器和它的环境有关的函数
 import sys
 
 import numpy as np
 import tensorflow as tf
 
+# vgg-mean
 VGG_MEAN = [103.939, 116.779, 123.68]
 
-
+# 类FCN8vgg
 class FCN8VGG:
 
     def __init__(self, vgg16_npy_path=None):
